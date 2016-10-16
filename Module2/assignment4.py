@@ -76,3 +76,5 @@ print(df)
 print(df.describe())
 GP = df.loc[15:16, "Games Played"].sum() 
 print(GP)
+
+print(len(df.loc[:, "Shooting Percentage"].unique()))
