@@ -46,14 +46,6 @@ df = df[df.iloc[:, 3:].apply(pd.to_numeric, errors='coerce').isnull().sum(axis=1
 print('--- 4 NaNs ---')
 df = df[df.isnull().sum(axis=1) < 4]
 
-# TODO: At this point, look through your dataset by printing
-# it. There probably still are some erroneous rows in there.
-# What indexing command(s) can you use to select all rows
-# EXCEPT those rows?
-#
-# .. your code here ..
-print(df)
-
 # TODO: Get rid of the 'RK' column
 #
 # .. your code here ..
@@ -65,10 +57,22 @@ df = df.iloc[:,1:]
 # .. your code here ..
 df = df.reset_index(drop=True)
 
+# TODO: At this point, look through your dataset by printing
+# it. There probably still are some erroneous rows in there.
+# What indexing command(s) can you use to select all rows
+# EXCEPT those rows?
+#
+# .. your code here ..
+#print(df.info())
 
+# TODO: Check the data type of all columns, and ensure those
+# that should be numeric are numeric
+df = df.apply(pd.to_numeric, errors='ignore')
+# print(df.info())
+print(df)
 
 # TODO: Your dataframe is now ready! Use the appropriate 
 # commands to answer the questions on the course lab page.
-#print(df.describe())
-GP = df.loc[15, 'Games Played'] + df.loc[16, 'Games Played']
+print(df.describe())
+GP = df.loc[15:16, "Games Played"].sum() 
 print(GP)
