@@ -10,7 +10,8 @@ df = pd.read_csv('Datasets/tutorial.csv')
 # TODO: Print the results of the .describe() method
 #
 # .. your code here ..
-print(df)
+print('--- df.describe ---')
+print(df.describe())
 
 
 # TODO: Figure out which indexing method you need to
