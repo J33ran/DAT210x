@@ -4,12 +4,13 @@ import pandas as pd
 #
 # .. your code here ..
 
+df = pd.read_csv('Datasets/tutorial.csv')
 
 
 # TODO: Print the results of the .describe() method
 #
 # .. your code here ..
-
+print(df)
 
 
 # TODO: Figure out which indexing method you need to
@@ -17,4 +18,5 @@ import pandas as pd
 # And print the results
 #
 # .. your code here ..
-
+print('--- slicing ---')
+print(df.col3[2:4])
